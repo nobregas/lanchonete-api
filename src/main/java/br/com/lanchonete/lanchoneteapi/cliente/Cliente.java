@@ -1,5 +1,6 @@
 package br.com.lanchonete.lanchoneteapi.cliente;
 
+import br.com.lanchonete.lanchoneteapi.cliente.dtos.ClienteResponse;
 import lombok.AllArgsConstructor;
 import lombok.Data;
 import lombok.NoArgsConstructor;
@@ -26,4 +27,14 @@ public class Cliente {
 
     private String endereco;
 
+    public Cliente(String nome, String email, String telefone, String endereco) {
+        this.nome = nome;
+        this.email = email;
+        this.telefone = telefone;
+        this.endereco = endereco;
+    }
+
+    public ClienteResponse toDto() {
+        return new ClienteResponse(this.id, this.nome, this.email, this.telefone, this.endereco);
+    }
 }
