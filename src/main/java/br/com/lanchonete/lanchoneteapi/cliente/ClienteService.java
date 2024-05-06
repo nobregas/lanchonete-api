@@ -28,7 +28,7 @@ public class ClienteService {
 
     public ClienteResponse buscarPorId(String id) {
         return clienteRepository.findById(id)
-                .orElseThrow(() -> new RuntimeException("Id inválido")).toDto();
+                .orElseThrow(() -> new RuntimeException("Cliente não encontrado")).toDto();
     }
 
 }
